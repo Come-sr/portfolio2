@@ -130,8 +130,7 @@ export default function About() {
                 ))}
               </ul>
             </div>
-
-            {/* Passions */}
+{/* Passions & Intérêts */}
             <div className="bento-card bg-[#f4f4f5] text-[#111111]">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-[#111111]/10 flex items-center justify-center">
@@ -140,21 +139,40 @@ export default function About() {
                 <h2 className="text-2xl font-extrabold tracking-tight">Passions & Intérêts</h2>
               </div>
               <div className="grid grid-cols-2 gap-3">
+                {/* 1. Maquettes Gunpla (Nouveau - spécifique à ta bio) */}
+                <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
+                  <Box className="w-6 h-6 mb-2 text-[#ef4444]" />
+                  <span className="text-xs font-bold">Maquettes Gunpla</span>
+                </div>
+
+                {/* 2. Auto-Hébergement (Nouveau - remplace Home Lab par un terme plus fort) */}
+                <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
+                  <Cloud className="w-6 h-6 mb-2 text-[#3b82f6]" />
+                  <span className="text-xs font-bold">Auto-Hébergement</span>
+                </div>
+
+                {/* 3. Botanique & Plantes (Nouveau - mentionné dans ta bio) */}
+                <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
+                  <Sprout className="w-6 h-6 mb-2 text-[#22c55e]" />
+                  <span className="text-xs font-bold">Botanique & Plantes</span>
+                </div>
+
+                {/* 4. Musique (Ancien - conservé) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
                   <Music className="w-6 h-6 mb-2 text-[#ec4899]" />
                   <span className="text-xs font-bold">Musique</span>
                 </div>
+
+                {/* 5. Lecture et Curiosité (Ancien - conservé) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
-                  <Server className="w-6 h-6 mb-2 text-[#10b981]" />
-                  <span className="text-xs font-bold">Home Lab</span>
+                  <BookOpen className="w-6 h-6 mb-2 text-[#6366f1]" />
+                  <span className="text-xs font-bold">Lecture & Curiosité</span>
                 </div>
+
+                {/* 6. Sécurité Réseau (Nouveau - lié à ta certification Stormshield) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
-                  <BookOpen className="w-6 h-6 mb-2 text-[#3b82f6]" />
-                  <span className="text-xs font-bold">Lecture et Curiosité</span>
-                </div>
-                <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
-                  <Newspaper className="w-6 h-6 mb-2 text-[#8b5cf6]" />
-                  <span className="text-xs font-bold">Actualités</span>
+                  <ShieldCheck className="w-6 h-6 mb-2 text-[#f59e0b]" />
+                  <span className="text-xs font-bold">Sécurité Réseau</span>
                 </div>
               </div>
             </div>
