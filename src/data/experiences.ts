@@ -36,36 +36,40 @@ export const experiences: Experience[] = [
     period: "2023 - 2025",
     type: "Formation",
     description: "Formation spécialisée en Solutions d'Infrastructure, Systèmes et Réseaux pour devenir technicien système et réseau.",
-    skills: ["Réseau", "Système", "Infrastructure", "Firewall Stormshield", "Protocole réseau : VLAN"],
-  },
-  {
-    title: "Stage au Pôle Universitaire de Vichy",
-    company: "Pôle Universitaire de Vichy",
-    location: "Vichy, France",
-    period: "2023 — 2 mois",
-    type: "Stage",
-    description: "Consolidation des compétences en réseau, découverte du fonctionnement d'un SI d'envergure et création de documentation pour le brassage réseau.",
-    skills: [
+        skills: [
+
     // Réseau
-    "Cisco IOS",
+
+    // Réseau
+    "Configuration d'équipements réseau",
     "VLAN / VTP",
-    "Routage",
+    "Routage statique & dynamique",
     "VPN Site-à-Site",
-    "Spanning-Tree",
-    "EtherChannel",
-    "HSRP",
+    "Spanning-Tree (STP)",
+    "EtherChannel / LACP",
+    "HSRP (haute disponibilité)",
     "DHCP",
     "DNS",
-    "Packet Tracer",
+    "Modélisation réseau (Packet Tracer)",
+
     // Système
+
     "Active Directory",
+
     "Windows Server (AD, DNS, DHCP, DFS)",
-    "Linux (Fedora)",
+
+    "Linux (Debian, Fedora)",
+
     "Asterisk / VoIP",
+
     // Sécurité
+
     "Firewall Stormshield",
+
     "Gestion des droits NTFS",
+
     // Services & déploiement
+
     "GLPI",
     "Nagios / SNMP",
     "Nextcloud",
@@ -74,12 +78,19 @@ export const experiences: Experience[] = [
     "TFTP",
     // Web
     "HTML / CSS",
-    "Hébergement web",
+    "Hébergement web (NGINX)",
     "Référencement (SEO)",
     // Transversal
-    "Rédaction de documentation technique",
-    "Gestion de projet"],
+    "Rédaction de documentation technique"],
   },
+  {
+    title: "Stage au Pôle Universitaire de Vichy",
+    company: "Pôle Universitaire de Vichy",
+    location: "Vichy, France",
+    period: "2023 — 2 mois",
+    type: "Stage",
+    description: "Consolidation des compétences en réseau, découverte du fonctionnement d'un SI d'envergure et création de documentation pour le brassage réseau.",
+    skills: ["Réseau", "Documentation", "Brassage réseau"],
   {
     title: "Bac Professionnel Systèmes Numériques",
     company: "Lycée Albert Londres",
