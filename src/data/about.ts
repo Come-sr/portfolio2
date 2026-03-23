@@ -49,3 +49,27 @@ export const education: Education[] = [
     details: "Option ARED (Audiovisuel, Réseau et Équipements Domestiques). Mention Bien. Acquisition de solides bases techniques en électronique et informatique."
   }
 ];
+
+//
+export const interests = [
+  {
+    icon: "Box", //
+    label: "Maquettes Gunpla",
+    color: "#ef4444" 
+  },
+  {
+    icon: "Sprout", //
+    label: "Botanique & Plantes",
+    color: "#22c55e"
+  },
+  {
+    icon: "Cloud", //
+    label: "Auto-Hébergement",
+    color: "#3b82f6"
+  },
+  {
+    icon: "ShieldCheck", //
+    label: "Sécurité Réseau",
+    color: "#f59e0b"
+  }
+];
