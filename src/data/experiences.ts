@@ -91,6 +91,7 @@ export const experiences: Experience[] = [
     type: "Stage",
     description: "Consolidation des compétences en réseau, découverte du fonctionnement d'un SI d'envergure et création de documentation pour le brassage réseau.",
     skills: ["Réseau", "Documentation", "Brassage réseau"],
+  },
   {
     title: "Bac Professionnel Systèmes Numériques",
     company: "Lycée Albert Londres",
