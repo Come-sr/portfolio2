@@ -2,6 +2,21 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Download, GraduationCap, Award, BookOpen, Music, Server, Newspaper } from 'lucide-react';
 import { certifications, education } from '../data/about';
+//
+import { 
+  Download, 
+  GraduationCap, 
+  Award, 
+  BookOpen, 
+  Music, 
+  Server, 
+  Newspaper,
+  // Nouvelles icônes à ajouter :
+  Box, 
+  Sprout, 
+  Cloud, 
+  ShieldCheck 
+} from 'lucide-react';
 
 export default function About() {
   useEffect(() => {
