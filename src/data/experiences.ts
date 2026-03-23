@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     period: "2023 - 2025",
     type: "Formation",
     description: "Formation spécialisée en Solutions d'Infrastructure, Systèmes et Réseaux pour devenir technicien système et réseau.",
-        skills: [
+    skills: [
 
     // Réseau
 
