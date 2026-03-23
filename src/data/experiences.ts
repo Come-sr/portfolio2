@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     period: "2023 - 2025",
     type: "Formation",
     description: "Formation spécialisée en Solutions d'Infrastructure, Systèmes et Réseaux pour devenir technicien système et réseau.",
-    skills: ["Réseau", "Système", "Infrastructure", "SISR"],
+    skills: ["Réseau", "Système", "Infrastructure", "Firewall Stormshield", "Protocole réseau : VLAN"],
   },
   {
     title: "Stage au Pôle Universitaire de Vichy",
@@ -45,7 +45,40 @@ export const experiences: Experience[] = [
     period: "2023 — 2 mois",
     type: "Stage",
     description: "Consolidation des compétences en réseau, découverte du fonctionnement d'un SI d'envergure et création de documentation pour le brassage réseau.",
-    skills: ["Réseau", "Documentation", "Brassage", "SI"],
+    skills: [
+    // Réseau
+    "Cisco IOS",
+    "VLAN / VTP",
+    "Routage",
+    "VPN Site-à-Site",
+    "Spanning-Tree",
+    "EtherChannel",
+    "HSRP",
+    "DHCP",
+    "DNS",
+    "Packet Tracer",
+    // Système
+    "Active Directory",
+    "Windows Server (AD, DNS, DHCP, DFS)",
+    "Linux (Fedora)",
+    "Asterisk / VoIP",
+    // Sécurité
+    "Firewall Stormshield",
+    "Gestion des droits NTFS",
+    // Services & déploiement
+    "GLPI",
+    "Nagios / SNMP",
+    "Nextcloud",
+    "WDS / MDT",
+    "WAPT",
+    "TFTP",
+    // Web
+    "HTML / CSS",
+    "Hébergement web",
+    "Référencement (SEO)",
+    // Transversal
+    "Rédaction de documentation technique",
+    "Gestion de projet"],
   },
   {
     title: "Bac Professionnel Systèmes Numériques",
@@ -54,7 +87,7 @@ export const experiences: Experience[] = [
     period: "2020 - 2023",
     type: "Formation",
     description: "Option Audiovisuels, réseau et équipements domestiques (Mention Bien). Acquisition de solides bases techniques en électronique et informatique.",
-    skills: ["Audiovisuel", "Réseau", "Équipements domestiques", "Électronique", "Informatique"],
+    skills: ["Audiovisuel", "notions de réseau", "Équipements domestiques","Arduino", "Électronique", "Informatique"],
   },
   {
     title: "Stage Découverte à Vichy Communauté",
@@ -62,7 +95,7 @@ export const experiences: Experience[] = [
     location: "Vichy, France",
     period: "2019 — 1 mois",
     type: "Stage",
-    description: "Première immersion professionnelle en informatique, confirmant mon orientation de carrière (maintenance et GLPI).",
-    skills: ["Maintenance", "Découverte IT", "GLPI"],
+    description: "Première immersion professionnelle en informatique, confirmant mon orientation de carrière (maintenance et ticketing sur GLPI).",
+    skills: ["Maintenance", "Découverte IT", "Ticketing", "GLPI"],
   },
 ];
