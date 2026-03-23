@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray-50: #f8f9fa;
+    --color-gray-500: #6c757d;
+    --color-gray-900: #212529;
+
+    --font-body: 'Inter', sans-serif;
+    --container-max-width: 1000px;
+    --section-padding: 6rem 0;
+    --grid-gap: 2rem;
+
+    --transition-smooth: 0.3s ease-out;
+    --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: #fff;
+    color: #000;
+    line-height: 1.2;
+    padding-top: 85px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 2rem 0;
+    background: #fff;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-left {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-right {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-right a {
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #000;
+    transition: opacity 0.3s ease;
+}
+
+.nav-right a:hover {
+    opacity: 0.5;
+}
+
+.page-wrapper {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.main-content {
+    background: #fff;
+    padding: 2rem;
+}
+
+/* Suppression des styles du panneau latéral */
+
+.main-content h1 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.main-content h2 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+    line-height: 1.4;
+    max-width: 70ch;
+}
+
+.main-content img {
+    display: block;
+    max-width: 100%;
+    margin: 2rem auto 3rem auto;
+}
+
+@media (max-width: 1024px) {
+    .page-wrapper {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-right {
+        display: none;
+    }
+}
+
+/* Tech Badges */
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.tech-badge {
+    padding: 0.3rem 0.8rem;
+    background: transparent;
+    border: 1px solid #000;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Section Dividers */
+.section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #000, transparent);
+    margin: 3rem 0;
+    opacity: 0.2;
+}
+
+/* Highlight Box */
+.highlight-box {
+    background: #f8f9fa;
+    border-left: 3px solid #000;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.highlight-box strong {
+    font-weight: 500;
+}
+
+/* Quote Block */
+.quote-block {
+    position: relative;
+    padding: 1.5rem 2rem;
+    margin: 3rem 0 2rem 0;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    opacity: 0.9;
+    border-left: 2px solid #000;
+    background: linear-gradient(to right, #f8f9fa, transparent);
+}
+
+/* Image with Caption */
+.image-with-caption {
+    margin: 2rem auto 3rem auto;
+    text-align: center;
+}
+
+.image-with-caption img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.image-caption {
+    font-size: 0.8rem;
+    font-weight: 300;
+    opacity: 0.6;
+    margin-top: 0.75rem;
+    font-style: italic;
+}

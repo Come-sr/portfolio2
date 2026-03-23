@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redondance Infrastructure</title>
+    <link rel="stylesheet" href="../project.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#111111] text-[#f4f4f5] font-sans">
+
+    <nav class="fixed top-0 left-0 right-0 z-10 p-8 bg-[#111111]/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto">
+            <a href="/projets" class="text-lg font-bold tracking-wider">← Retour</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto pt-32 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Redondance d'Infrastructure
+            </h1>
+            <div class="flex justify-center gap-4 mb-8">
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">STP</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">EtherChannel</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Cisco</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Packet Tracer</span>
+            </div>
+            <p class="text-xl text-[#a1a1aa] font-medium max-w-2xl mx-auto">
+                Configuration des protocoles STP et EtherChannel pour garantir la haute
+                disponibilité du réseau.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Contexte
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Pour ce projet, j'ai mis en place et configuré les protocoles Spanning Tree (STP) et EtherChannel sur une
+                    maquette Cisco Packet Tracer afin de garantir la haute disponibilité du réseau.
+                </p>
+                <div class="mt-8">
+                    <img src="/Projet/Alternance/Images/redondance1.png" alt="Schéma de l'infrastructure redondante" class="rounded-2xl">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    EtherChannel
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    L'EtherChannel est une technologie qui permet de regrouper plusieurs liens physiques en un seul lien
+                    logique, augmentant ainsi la bande passante et la redondance.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Spanning Tree Protocol (STP)
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Le STP est un protocole qui empêche les boucles de commutation en créant une arborescence logique des
+                    chemins, désactivant les liens redondants pour garantir une topologie de réseau sans boucle.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Ce que j'ai appris
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Ce projet m'a permis de comprendre le fonctionnement de STP et d'EtherChannel. J'ai appris à les
+                    configurer et j'ai développé mes compétences en autonomie, tout en comprenant l'importance de documenter
+                    les commandes de configuration.
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

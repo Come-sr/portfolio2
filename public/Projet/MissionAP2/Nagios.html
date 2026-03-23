@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervision Nagios</title>
+    <link rel="stylesheet" href="../project.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#111111] text-[#f4f4f5] font-sans">
+
+    <nav class="fixed top-0 left-0 right-0 z-10 p-8 bg-[#111111]/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto">
+            <a href="/projets" class="text-lg font-bold tracking-wider">← Retour</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto pt-32 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Supervision avec Nagios
+            </h1>
+            <div class="flex justify-center gap-4 mb-8">
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Nagios</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">SNMP</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Linux</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Monitoring</span>
+            </div>
+            <p class="text-xl text-[#a1a1aa] font-medium max-w-2xl mx-auto">
+                Installer et configurer Nagios pour la supervision des services et du
+                matériel informatique.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Contexte
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Ce projet a consisté à installer et configurer Nagios pour la supervision des services et du matériel
+                    informatique. Nous avons installé Nagios sur un serveur Linux Fedora et configuré les agents SNMP sur
+                    des machines Linux et Windows, ainsi que l'agent NSClient++ pour superviser les services et matériels.
+                </p>
+                <div class="mt-8">
+                    <img src="/Projet/Alternance/Images/Nagios.png" alt="Topologie de la supervision Nagios" class="rounded-2xl">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Installation et Configuration
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Nous avons commencé par installer Nagios sur un serveur Fedora, puis nous avons personnalisé les fichiers
+                    de configuration pour surveiller les services spécifiques et les équipements matériels via SNMP, y
+                    compris des équipements Cisco.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Tests et Validation
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Des tests ont été effectués pour valider que la configuration de Nagios, des agents SNMP, et des addons
+                    comme NagiosGraph fonctionnaient correctement. Des alertes ont été testées pour s'assurer que le système
+                    de supervision réagissait en cas de défaillance.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Ce que j'ai appris
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Ce projet m'a permis de découvrir l'outil de supervision Nagios et de comprendre son fonctionnement. J'ai
+                    appris à installer et configurer Nagios, ce qui m'a permis de mettre en pratique mes compétences en
+                    gestion du patrimoine informatique.
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

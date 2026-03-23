@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission: Déploiement GLPI</title>
+    <link rel="stylesheet" href="../project.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#111111] text-[#f4f4f5] font-sans">
+
+    <nav class="fixed top-0 left-0 right-0 z-10 p-8 bg-[#111111]/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto">
+            <a href="/projets" class="text-lg font-bold tracking-wider">← Retour</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto pt-32 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Fil Rouge : Déploiement et gestion de GLPI
+            </h1>
+            <div class="flex justify-center gap-4 mb-8">
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">GLPI</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Docker</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Linux</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Ticketing</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Inventaire</span>
+            </div>
+            <p class="text-xl text-[#a1a1aa] font-medium max-w-2xl mx-auto">
+                Configuration et optimisation de GLPI pour centraliser l'inventaire du parc
+                informatique, automatiser la gestion des tickets et faciliter le suivi économique des équipements.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Contexte du Projet
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    GLPI (Gestionnaire Libre de Parc Informatique) est une solution open-source complète qui permet de
+                    centraliser et d'automatiser de nombreuses tâches liées à la gestion d'un parc informatique : inventaire
+                    des équipements, gestion des incidents (ticketing) et planification des interventions.
+                </p>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed mt-4">
+                    Je n'avais jamais utilisé GLPI avant ce projet. Une instance existait déjà mais n'était plus maintenue.
+                    Ma mission a été de reprendre en main l'existant, de comprendre son fonctionnement et de l'optimiser
+                    en profondeur. Cela m'a demandé d'apprendre la logique de GLPI et de me plonger dans la documentation
+                    officielle.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Mise en Place Technique
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    L'objectif principal était d'obtenir un inventaire automatique et complet du parc informatique :
+                    ordinateurs, switchs, bornes Wi-Fi, téléphones... tout devait être centralisé. En parallèle, j'ai mis en
+                    place un système de ticketing utilisé quotidiennement par l'équipe informatique.
+                </p>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed mt-4">
+                    GLPI fonctionne sur une infrastructure Docker. J'ai réalisé la migration depuis l'image
+                    <code>elestio/glpi</code> vers <code>glpi/glpi</code>. Cette opération a nécessité plusieurs étapes :
+                </p>
+                <ul class="list-disc list-inside text-lg text-[#a1a1aa] font-medium leading-relaxed mt-4">
+                    <li>Vérification de l'intégrité des données existantes</li>
+                    <li>Sauvegarde complète de la base de données</li>
+                    <li>Transfert et réimportation dans le nouvel environnement</li>
+                </ul>
+                <div class="mt-8">
+                    <img src="/Projet/Alternance/Images/GLPI1.png" alt="Tableau de bord GLPI" class="rounded-2xl">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Configuration et Optimisation
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    J'ai structuré la remontée d'inventaire via des règles d'assignation basées sur des critères physiques
+                    (salle) et techniques (versions, licences). Pour assurer la lisibilité du parc, j'ai configuré
+                    l'exclusion automatique des composants logiciels inutiles (add-ons). En parallèle, l'utilisation de
+                    règles de dictionnaire a permis de normaliser la nomenclature, assurant une base de données cohérente et
+                    exploitable
+                </p>
+                <div class="mt-8">
+                    <img src="/Projet/Alternance/Images/GLPI2.png" alt="Exemple de règle de dictionnaire GLPI" class="rounded-2xl">
+                </div>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed mt-8">
+                    Une partie importante du projet consistait à lier les actifs informatiques à leurs factures et bons de
+                    commande. Cela centralise les informations économiques pour le suivi et le reporting, et accélère le
+                    contact avec les supports constructeurs : en cas de problème sur un poste, on retrouve immédiatement les
+                    informations nécessaires sans avoir à chercher en ligne.
+                </p>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed mt-4">
+                    Au-delà de la configuration de base, j'ai ajouté des champs personnalisés pour répondre aux besoins de
+                    l'équipe. Par exemple, un champ dédié aux identifiants TeamViewer permet d'accéder rapidement aux
+                    informations de prise en main à distance.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Système de Ticketing
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    La mise en place du service de ticketing a commencé par la configuration de l'envoi d'e-mails
+                    automatiques lors de la création d'un ticket. J'ai ensuite paramétré un collecteur mail : dès qu'un
+                    e-mail nécessitant un support est reçu, il est mis dans un dossier spécifique et analysé par GLPI qui
+                    crée automatiquement un ticket et
+                    assigne l'expéditeur comme demandeur.
+                </p>
+                <div class="mt-8">
+                    <img src="/Projet/Alternance/Images/GLPI5.png" alt="Exemple de ticket dans GLPI" class="rounded-2xl">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Ce que j'ai appris
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Ce projet m'a confronté à de nombreux aspects que je ne connaissais pas. J'ai dû apprendre à lire et
+                    exploiter la documentation technique, à résoudre des problèmes par moi-même et à adapter mes solutions
+                    face à des obstacles imprévus.
+                </p>
+                <div class="mt-8 p-8 bg-[#1c1c1c] border border-white/5 rounded-2xl">
+                    <p class="text-xl text-white font-medium leading-relaxed">
+                        Cette expérience m'a permis de développer une vraie autonomie dans la configuration et la gestion d'un
+                        outil métier complet utilisé quotidiennement par l'équipe.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

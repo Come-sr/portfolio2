@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration Windows Server</title>
+    <link rel="stylesheet" href="../project.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#111111] text-[#f4f4f5] font-sans">
+
+    <nav class="fixed top-0 left-0 right-0 z-10 p-8 bg-[#111111]/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto">
+            <a href="/projets" class="text-lg font-bold tracking-wider">← Retour</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto pt-32 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Administration Windows Server
+            </h1>
+            <div class="flex justify-center gap-4 mb-8">
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Windows Server</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">Active Directory</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">DNS</span>
+                <span class="px-4 py-2 bg-[#c4f042] text-[#111111] rounded-full text-sm font-bold">DHCP</span>
+            </div>
+            <p class="text-xl text-[#a1a1aa] font-medium max-w-2xl mx-auto">
+                Mise en place d'une infrastructure Microsoft complète avec authentification
+                de domaine, gestion de fichiers et services réseau.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Contexte
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Dans le cadre de ce projet, nous avons mis en place des services essentiels d'une infrastructure
+                    Microsoft : authentification de domaine, gestion de fichiers, et un service DHCP redondant. Cela a
+                    impliqué la configuration de deux serveurs Active Directory (AD), ainsi que des services DNS et DHCP.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Infrastructure Active Directory
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Nous avons créé quatre unités d'organisation (UO) et quatre groupes d'utilisateurs pour faciliter la
+                    gestion des permissions. Des scripts de logon ont été créés pour mapper automatiquement les lecteurs
+                    réseau pour chaque groupe d'utilisateurs.
+                </p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <img src="/Projet/Alternance/Images/winserv1.png" alt="Serveur DHCP" class="rounded-2xl">
+                    <img src="/Projet/Alternance/Images/winserv2.png" alt="Structure Active Directory" class="rounded-2xl">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Service de Fichiers et Partages
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Notre arborescence de fichiers comprend plusieurs dossiers partagés, organisés par groupe, ainsi que des
+                    dossiers personnels pour chaque utilisateur. Les permissions NTFS et les autorisations de partage ont
+                    été configurées pour garantir un accès sécurisé aux données.
+                </p>
+                <div class="mt-8">
+                    <img src="/Projet/Alternance/Images/winserv3.png" alt="Arborescence des partages réseau" class="rounded-2xl">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight mb-6 text-white">
+                    Ce que j'ai appris
+                </h2>
+                <p class="text-lg text-[#a1a1aa] font-medium leading-relaxed">
+                    Cette mission m'a permis de me familiariser avec les fonctionnalités et les services fondamentaux de
+                    Windows Server. J'ai pu m'initier au monde de l'administration système et de la gestion centralisée des
+                    ressources informatiques.
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
