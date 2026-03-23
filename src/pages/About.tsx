@@ -170,7 +170,7 @@ export default function About() {
                 {/* 6. Sécurité Réseau (Nouveau - lié à ta certification Stormshield) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
                   <ShieldCheck className="w-6 h-6 mb-2 text-[#f59e0b]" />
-                  <span className="text-xs font-bold">Sécurité Réseau</span>
+                  <span className="text-xs font-bold">Veille technologique</span>
                 </div>
               </div>
             </div>
