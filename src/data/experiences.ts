@@ -31,8 +31,8 @@ export const experiences: Experience[] = [
   },
   {
     title: "BTS SIO option SISR",
-    company: "Lycée Valery Larbaud",
-    location: "Cusset, France",
+    company: "Lycée Albert Londres",
+    location: "Vichy, France",
     period: "2023 - 2025",
     type: "Formation",
     description: "Formation spécialisée en Solutions d'Infrastructure, Systèmes et Réseaux pour devenir technicien système et réseau.",
