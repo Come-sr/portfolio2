@@ -56,15 +56,15 @@ export default function Home() {
                   5500,
                   'étudiant en Bac+3',
                   7000,
-                  'passionné d\'informatique',
+                  "passionné d'informatique",
                   6500,
                   'Côme Servy',
                   5000,
                   'un technicien système et réseau',
                   6000,
-                  'passionné d\'informatique',
+                  "passionné d'informatique",
                   7500,
-                  'en train d\'écouter de la musique',
+                  "en train d'écouter de la musique",
                   5000,
                 ]}
                 wrapper="span"
@@ -90,15 +90,18 @@ export default function Home() {
             >
               Me contacter
             </a>
-            <a
-              href="/CV.pdf"
+            <motion.a
+              href="/cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              download="CV_Servy_Come.pdf"
               className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-[#111111]/25 text-[#111111] rounded-full font-semibold hover:scale-105 hover:border-[#111111]/50 transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Download className="w-4 h-4" />
               Mon CV
-            </a>
+            </motion.a>
           </div>
         </motion.div>
 
