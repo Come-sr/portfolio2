@@ -72,15 +72,18 @@ export default function About() {
                 </p>
               </div>
               <div className="mt-10">
-                <a
-                  href="/CV.pdf"
+                <motion.a 
+                  href="/cv.pdf" 
+                  download="CV_NOM_Prenom.pdf" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#c4f042] text-[#111111] rounded-full font-bold hover:scale-105 transition-transform shadow-xl"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-xl font-medium transition-all group text-white"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <Download className="w-5 h-5" />
-                  Télécharger mon CV
-                </a>
+                  <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  Télécharger CV
+                </motion.a>
               </div>
             </div>
 
@@ -123,12 +126,15 @@ export default function About() {
                 {certifications.map((cert, index) => (
                   <li key={index} className="flex flex-col p-4 rounded-2xl bg-white/5 border border-white/5">
                     <span className="text-white font-bold mb-1">{cert.title}</span>
-                    <span className="text-sm text-[#a1a1aa] font-medium">{cert.org} • <span className="text-[#3b82f6]">{cert.date}</span></span>
+                    <span className="text-sm text-[#a1a1aa] font-medium">
+                      {cert.org} • <span className="text-[#3b82f6]">{cert.date}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
-{/* Passions & Intérêts */}
+
+            {/* Passions & Intérêts */}
             <div className="bento-card bg-[#f4f4f5] text-[#111111]">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-[#111111]/10 flex items-center justify-center">
@@ -137,40 +143,34 @@ export default function About() {
                 <h2 className="text-2xl font-extrabold tracking-tight">Passions & Intérêts</h2>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                {/* 1. Maquettes Gunpla (Nouveau - spécifique à ta bio) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
                   <Box className="w-6 h-6 mb-2 text-[#ef4444]" />
                   <span className="text-xs font-bold">Maquettes Gunpla</span>
                 </div>
 
-                {/* 2. Auto-Hébergement (Nouveau - remplace Home Lab par un terme plus fort) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
                   <Cloud className="w-6 h-6 mb-2 text-[#3b82f6]" />
                   <span className="text-xs font-bold">Auto-Hébergement</span>
                 </div>
 
-                {/* 3. Botanique & Plantes (Nouveau - mentionné dans ta bio) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
                   <Sprout className="w-6 h-6 mb-2 text-[#22c55e]" />
-                  <span className="text-xs font-bold">Botanique & Plantes</span>
+                  <span className="text-xs font-bold">Botanique</span>
                 </div>
 
-                {/* 4. Musique (Ancien - conservé) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
                   <Music className="w-6 h-6 mb-2 text-[#ec4899]" />
                   <span className="text-xs font-bold">Musique</span>
                 </div>
 
-                {/* 5. Lecture et Curiosité (Ancien - conservé) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
                   <BookOpen className="w-6 h-6 mb-2 text-[#6366f1]" />
-                  <span className="text-xs font-bold">Lecture & Curiosité</span>
+                  <span className="text-xs font-bold">Lecture</span>
                 </div>
 
-                {/* 6. Sécurité Réseau (Nouveau - lié à ta certification Stormshield) */}
                 <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white shadow-sm text-center">
                   <ShieldCheck className="w-6 h-6 mb-2 text-[#f59e0b]" />
-                  <span className="text-xs font-bold">Veille technologique</span>
+                  <span className="text-xs font-bold">Veille tech</span>
                 </div>
               </div>
             </div>
