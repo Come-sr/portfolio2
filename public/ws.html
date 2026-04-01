@@ -289,7 +289,8 @@ tr:hover td { background: rgba(56,189,248,0.04); }
   <a href="#s8">8. Sécurité & Firewall</a>
   <a href="#s9">9. Scripts TP</a>
   <a href="#s10">10. GPO TP Paths</a>
-</nav>
+  <a href="#s11">11. PKI (AD CS)</a>
+</nav >
 
 <div class="main">
 
@@ -369,6 +370,16 @@ tr:hover td { background: rgba(56,189,248,0.04); }
       </ul>
     </div>
 
+    <div class="block warn">
+      <h3>⚠️ Diagnostic RODC — Password Replication Policy (PRP)</h3>
+      <p>Par défaut, un RODC ne stocke <strong>aucun mot de passe</strong>.</p>
+      <ul>
+        <li><strong>Le piège :</strong> Si le lien WAN est coupé, les utilisateurs ne peuvent pas se connecter car le RODC ne peut pas vérifier le mdp auprès d'un DC "Full".</li>
+        <li><strong>Solution :</strong> Ajouter les utilisateurs/groupes dans <code>Allowed RODC Password Replication Group</code> pour mettre les mdp en cache localement.</li>
+        <li><strong>Vérification :</strong> <code>Get-ADDomainControllerPasswordReplicationPolicy</code></li>
+      </ul>
+    </div>
+    
     <div class="block">
       <h3>Partitions de NTDS.dit</h3>
       <p>Schéma, Configuration, Domain naming context, Application (ex: DNS)</p>
@@ -525,7 +536,7 @@ foreach ($u in $Users) {
       <h3>🎯 TP — Créer des comptes ordinateurs en masse</h3>
 <pre>Import-Module ActiveDirectory
 $HostName  = Read-Host "Hostname des comptes ordinateurs"
-$NbComputer = Read-Host "Nombre d'ordinateurs à créer"
+$NbComSputer = Read-Host "Nombre d'ordinateurs à créer"
 $PathOu    = Read-Host "Chemin de l'OU (eg: OU=Users,OU=Administration)"
 
 if ($PathOu -eq "") { $FullPath="OU=CMPDefault,DC=actus,DC=lan" }
@@ -757,6 +768,15 @@ SELECT * FROM Win32_OperatingSystem WHERE Version LIKE "10.0%" AND ProductType =
       <ul>
         <li><strong>GPC</strong> (Group Policy Container) : stocké dans AD, identifié par GUID</li>
         <li><strong>GPT</strong> (Group Policy Template) : fichiers dans <code>SYSVOL</code></li>
+        <div class="block important">
+      <h3>🔍 Diagnostic DNS — Enregistrements SRV Vitaux</h3>
+      <p>Si un client ne peut pas rejoindre le domaine, vérifiez ces records :</p>
+      <ul>
+        <li><strong>Localiser un DC :</strong> <code>_ldap._tcp.dc._msdcs.Domaine.lan</code></li>
+        <li><strong>Localiser un Catalogue Global :</strong> <code>_ldap._tcp.gc._msdcs.Foret.lan</code></li>
+        <li><strong>Localiser un DC par Site :</strong> <code>_ldap._tcp.NomDuSite._sites.dc._msdcs.Domaine.lan</code></li>
+      </ul>
+    </div>
         <li><strong>Central Store</strong> : <code>\\domaine\SysVol\domaine\Policies\PolicyDefinitions</code></li>
         <li>ADMX (paramètres XML) + ADML (langues) remplacent les anciens ADM</li>
       </ul>
@@ -825,7 +845,27 @@ Restore-GPO -Name "NomGPO" -Path "C:\GPOBackup"</pre>
         <li><strong>Bridgehead</strong> : serveur principal de réplication d'un site</li>
       </ul>
     </div>
+<div class="block diag">
+      <h3>⚠️ Impact des Pannes FSMO (Diagnostic Examen)</h3>
+      <table>
+        <tr><th>Rôle HS</th><th>Symptôme / Impact</th></tr>
+        <tr><td><strong>Schéma Master</strong></td><td>Impossible d'installer Exchange ou de modifier le schéma (ex: UserPic).</td></tr>
+        <tr><td><strong>Naming Master</strong></td><td>Impossible d'ajouter ou de supprimer un domaine/enfant dans la forêt.</td></tr>
+        <tr><td><strong>PDC Emulator</strong></td><td>Échec des changements de mdp ; désynchronisation de l'heure ; erreurs GPO.</td></tr>
+        <tr><td><strong>RID Master</strong></td><td>Création d'objets (Users/PC) impossible une fois le pool local épuisé.</td></tr>
+        <tr><td><strong>Infrastructure</strong></td><td>Les noms d'objets déplacés entre domaines ne se mettent pas à jour.</td></tr>
+      </table>
+    </div>
 
+    <div class="block">
+      <h3>Maintenance : Logique de Restauration</h3>
+      <p>Toute restauration nécessite le mode <strong>DSRM</strong> (Directory Services Restore Mode).</p>
+      <ul>
+        <li><strong>Non-Authoritative (Par défaut) :</strong> Le DC restauré attend que les autres DC lui envoient les données plus récentes.</li>
+        <li><strong>Authoritative :</strong> Pour annuler une erreur (ex: suppression accidentelle d'une OU). Le DC forcé "écrase" les données des autres serveurs.</li>
+      </ul>
+    </div>
+    
     <div class="block cmd">
       <h3>🔧 Outils de monitoring</h3>
 <pre># Statuts de réplication
@@ -965,6 +1005,28 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=optional features,
         <li><strong>Moindre privilège</strong> : comptes séparés par rôle (Admin SQL, Admin AD, compte standard)</li>
         <li><strong>PowerShell JEA</strong> (Just Enough Administration) : limite les actions + trace tout</li>
         <li>Par défaut sur Windows Server : pare-feu actif, découverte réseau désactivée, UAC actif</li>
+        <div class="section" id="s11">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="num c8">11</span>
+    <h2>Active Directory Certificate Services</h2>
+    <span class="toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="block tp">
+      <h3>Architecture 2-Tiers (Lab Logic)</h3>
+      <ul>
+        <li><strong>Root CA (Standalone) :</strong> Racine de confiance, validité longue (20 ans). Doit être <strong>Offline</strong> pour la sécurité.</li>
+        <li><strong>Subordinate CA (Enterprise) :</strong> Membre du domaine, gère les certificats au quotidien (Online).</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Auto-enrôlement (Auto-enrolment)</h3>
+      <p>Permet aux PC/Users de demander leurs certificats automatiquement.</p>
+      <span class="gpo-path">Config Ordinateur > Paramètres Secu > Public Key Policies > Certificate Services Client - Auto-Enrollment</span>
+      <p><strong>Note :</strong> Le certificat Racine doit être publié via GPO dans "Trusted Root Certification Authorities".</p>
+    </div>
+  </div>
+</div>
       </ul>
     </div>
 
